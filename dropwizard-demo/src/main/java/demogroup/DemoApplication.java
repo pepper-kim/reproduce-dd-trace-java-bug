@@ -1,5 +1,6 @@
 package demogroup;
 
+import demogroup.resources.ApiResource;
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
@@ -21,9 +22,9 @@ public class DemoApplication extends Application<DemoConfiguration> {
     }
 
     @Override
-    public void run(final DemoConfiguration configuration,
-                    final Environment environment) {
-        // TODO: implement application
+    public void run(final DemoConfiguration configuration, final Environment environment) {
+        ApiResource resource = new ApiResource();
+        environment.jersey().register(resource);
     }
 
 }
