@@ -10,11 +10,13 @@ import jakarta.ws.rs.core.MediaType;
 public class ApiResource {
 
   @GET
+  @Path("/ping")
   public String ping() {
     return "pong";
   }
 
   @GET
+  @Path("/test")
   public String getTestData() {
     Thread.ofVirtual().start(() -> {
       doPinned();
