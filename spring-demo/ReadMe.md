@@ -3,7 +3,7 @@
 After Step4 you can't see the stack trace of where pinned happen(it should be printed by Djdk.tracePinnedThreads VM option) and can't see "pinned ended!" printed at console also. But if you run step4 after running step3 without -javaagent:lib/dd-java-agent-1.49.0.jar, you can see the stack trace where pinned happened.
 
 If you see thread dump made by jstack, you can see dd-telemetry thread's state changed after pinned happen(This was the main reason why i thought dd-java-agent might be the problem and tried to remove it.
-However when reproducing one with our test server environment, i found dd-trace-monitor's state changed. Supposing there might be another reason that make this. The one thing i can say is that dd-java-agent.jar is making this issue.
+However when reproducing one with dropwizard framework(our company uses it), i found dd-trace-monitor's state changed. Supposing there might be another reason that make this. The one thing i can say is that dd-java-agent.jar is making this issue.
 
 [spring_demo_jstack_before_pinned_2025-05-19_10-43-37.txt](loganddumps%2Fspring_demo_jstack_before_pinned_2025-05-19_10-43-37.txt)
 [spring_demo_after_pinned_jstack_2025-05-19_10-43-42.txt](loganddumps%2Fspring_demo_after_pinned_jstack_2025-05-19_10-43-42.txt)
